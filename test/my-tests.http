@@ -1,0 +1,39 @@
+### API tests run with REST Client VSCode plugin
+
+### List all Posts
+GET http://localhost:3000/posts/ HTTP/1.1
+
+### Insert one Post
+POST http://localhost:3000/posts/ HTTP/1.1
+content-type: application/json
+
+{
+  "date": "2021-08-16",
+  "title": "Intro to NestJS",
+  "body": "This blog post is about NestJS",
+  "category": "NestJS"
+}
+
+### Get Post 1
+GET http://localhost:3000/posts/1 HTTP/1.1
+
+### Update Post 1
+PUT http://localhost:3000/posts/1 HTTP/1.1
+content-type: application/json
+
+{
+  "date": "2021-08-16",
+  "title": "Intro to TypeScript",
+  "body": "An intro to TypeScript",
+  "category": "TypeScript"
+}
+
+### Delete Post 1
+DELETE http://localhost:3000/posts/1 HTTP/1.1
+
+
+### Update post #2 -> should fail and return error
+PUT http://localhost:3000/posts/2 HTTP/1.1
+
+### Delete Post 2
+DELETE http://localhost:3000/posts/2 HTTP/1.1
